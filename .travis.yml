@@ -28,7 +28,7 @@ os:
 script:
 - wget -N https://github.com/multiarch/qemu-user-static/releases/download/$QEMU_VER/x86_64_qemu-${QEMU_ARCH}-static.tar.gz
 - tar -xvf x86_64_qemu-${QEMU_ARCH}-static.tar.gz
-- docker build -t $DOCKER_REPO:$ARCH-$TRAVIS_COMMIT --build ARCHREPO="$ARCH" --build-arg QEMU_ARCH="$QEMU_ARCH" ./
+- docker build -t $DOCKER_REPO:$ARCH-$TRAVIS_COMMIT --build-arg ARCH="$ARCH" --build-arg QEMU_ARCH="$QEMU_ARCH" ./
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
