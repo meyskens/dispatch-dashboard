@@ -1,0 +1,30 @@
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8f4f3;
+}
+
+.login {
+  width: 300px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.logo {
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
