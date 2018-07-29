@@ -6,8 +6,44 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import {MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatGridListModule, MatInputModule} from '@angular/material';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -21,7 +57,10 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { CanActivateViaAuthGuard } from './auth/can-activate-via-auth.guard';
 import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
-import { ApplistComponent } from './applist/applist.component';
+import { AppListComponent } from './applist/applist.component';
+import { LogsComponent } from './logs/logs.component';
+import { AppListService } from './applist/applist.service';
+import { NewAppDialog } from './applist/newapp.component';
 
 @NgModule({
   declarations: [
@@ -29,27 +68,57 @@ import { ApplistComponent } from './applist/applist.component';
     LoginComponent,
     DashComponent,
     HomeComponent,
-    ApplistComponent
+    AppListComponent,
+    LogsComponent,
+    NewAppDialog,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatMenuModule,
-    MatToolbarModule,
     FlexLayoutModule,
-    MatIconModule,
-    MatButtonModule,
     FormsModule,
-    MatCardModule,
-    MatGridListModule,
-    MatInputModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
   ],
   providers: [
     AuthService,
+    AppListService,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptorService,
@@ -57,6 +126,7 @@ import { ApplistComponent } from './applist/applist.component';
     },
     CanActivateViaAuthGuard
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewAppDialog],
 })
 export class AppModule { }
