@@ -20,12 +20,16 @@ import { AuthService } from './auth/auth.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { CanActivateViaAuthGuard } from './auth/can-activate-via-auth.guard';
 import { DashComponent } from './dash/dash.component';
+import { HomeComponent } from './home/home.component';
+import { ApplistComponent } from './applist/applist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashComponent
+    DashComponent,
+    HomeComponent,
+    ApplistComponent
   ],
   imports: [
     BrowserModule,

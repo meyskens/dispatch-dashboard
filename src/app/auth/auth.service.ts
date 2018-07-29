@@ -40,7 +40,6 @@ export class AuthService {
         req.subscribe(
             (res: any) => {
                 localStorage.setItem(this.TOKEN_KEY, res.token);
-
                 this.router.navigateByUrl('/dash');
             }
         )
