@@ -1,15 +1,19 @@
 <mat-toolbar color="primary" *ngIf="authService.isAuthenticated">
-  <button mat-button routerLink="/" class="logo"><i class="fal fa-headset"></i> Dispatch.sh</button>
+  <button mat-button routerLink="/" class="logo">
+    <i class="fal fa-headset"></i> Dispatch.sh</button>
 
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-      <button mat-button routerLink="/">Dashboard</button>
-      <button mat-button routerLink="/apps">Apps</button>
-      <button mat-button *ngIf="authService.isAuthenticated" (click)="authService.logout()">logout</button>
+    <button mat-button routerLink="/Dashboard">Dashboard</button>
+    <button mat-button routerLink="/apps">Apps</button>
+    <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-user"></i> {{ authService.user.name }} <i class="fas fa-caret-down"></i></button>
+    <mat-menu #menu="matMenu">
+      <button mat-button (click)="authService.logout()">Logout</button>
+    </mat-menu>
   </div>
   <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-   <mat-icon>menu</mat-icon>
+    <mat-icon>menu</mat-icon>
   </button>
 
 </mat-toolbar>

@@ -9,6 +9,7 @@ import { API_ENDPOINT } from "../../constants"
 export class AuthService {
 
     TOKEN_KEY = 'token';
+    USER_KEY = 'token';
 
     constructor(private http: HttpClient, private router: Router) { }
 
@@ -18,6 +19,10 @@ export class AuthService {
 
     get isAuthenticated() {
         return !!localStorage.getItem(this.TOKEN_KEY);
+    }
+
+    get user() {
+        return <User>JSON.parse(localStorage.getItem(this.USER_KEY))
     }
 
     logout() {
@@ -41,9 +46,22 @@ export class AuthService {
             (res: any) => {
                 localStorage.setItem(this.TOKEN_KEY, res.token);
                 this.router.navigateByUrl('/dash');
+                this.storeUserInfo()
             }
         )
 
         return req.toPromise()
     }
+
+    storeUserInfo() {
+        return this.http.get(API_ENDPOINT + '/dash/me').subscribe((res : User) => localStorage.setItem(this.USER_KEY, JSON.stringify(res)))
+    }
+}
+
+
+export class User {
+    name: string;
+    repoUser: string;
+    email: string;
+    constructor() { }
 }
