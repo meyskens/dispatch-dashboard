@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions, Response } from '@angular/http';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { API_ENDPOINT } from "../../constants"
+
 @Injectable()
 export class AuthService {
 
-    API_URL = 'http://localhost:8080';
     TOKEN_KEY = 'token';
 
     constructor(private http: HttpClient, private router: Router) { }
@@ -22,7 +22,7 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem(this.TOKEN_KEY);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/login');
     }
 
     login(email: string, pass: string) {
@@ -35,7 +35,7 @@ export class AuthService {
             password: pass
         };
 
-        const req = this.http.post(this.API_URL + '/authenticate', data, headers)
+        const req = this.http.post(API_ENDPOINT + '/authenticate', data, headers)
         
         req.subscribe(
             (res: any) => {
