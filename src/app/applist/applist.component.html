@@ -1,0 +1,18 @@
+<mat-card class="body-card">
+  <mat-card-title class="flex">
+    <span>Apps</span>
+    <span class="fill-space"></span>
+    <button mat-raised-button color="accent" (click)="openDialog()">
+      <i class="fas fa-plus-circle"></i> Add</button>
+  </mat-card-title>
+  <mat-list>
+    <div *ngFor="let app of apps">
+      <mat-list-item>
+        {{ app.name }}
+        <span class="fill-space"></span>
+        <i class="fas fa-angle-right fa-2x"></i>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</mat-card>
