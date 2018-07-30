@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppListService, App } from './applist.service';
-import {MatDialog} from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { NewAppDialog } from './newapp.component';
 
 @Component({
@@ -10,12 +10,12 @@ import { NewAppDialog } from './newapp.component';
 })
 export class AppListComponent implements OnInit {
 
-  private apps : App[];
+  private apps: App[];
 
-  constructor(private service: AppListService, public dialog: MatDialog) { }
+  constructor(private service: AppListService, public dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.service.getAllApps().subscribe((res : App[]) => this.apps = res)
+    this.service.getAllApps().subscribe((res: App[]) => this.apps = res)
   }
 
   openDialog(): void {

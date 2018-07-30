@@ -7,11 +7,13 @@
   </mat-card-title>
   <mat-list>
     <div *ngFor="let app of apps">
+      <a [routerLink]="'/app/' + app._id">
       <mat-list-item>
         {{ app.name }}
         <span class="fill-space"></span>
         <i class="fas fa-angle-right fa-2x"></i>
       </mat-list-item>
+      </a>
       <mat-divider></mat-divider>
     </div>
   </mat-list>
