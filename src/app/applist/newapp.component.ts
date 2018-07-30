@@ -5,6 +5,10 @@ import { AuthService } from '../auth/auth.service';
 export interface NewAppDialogData {
     name: string;
     repo: string;
+    values: {
+        domain: string;
+        replicas: number;
+    };
   }
 
 @Component({
@@ -17,7 +21,12 @@ export interface NewAppDialogData {
     constructor(
       public dialogRef: MatDialogRef<NewAppDialog>,
       @Inject(MAT_DIALOG_DATA) public data: NewAppDialogData,
-      private authService : AuthService) {}
+      private authService : AuthService) {
+          this.data.values = {
+              domain: "",
+              replicas: 1,
+          }
+      }
   
     cancel(): void {
       this.dialogRef.close();
