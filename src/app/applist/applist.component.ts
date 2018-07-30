@@ -28,6 +28,12 @@ export class AppListComponent implements OnInit {
       console.log('The dialog was closed');
       if (result) {
         console.log(result);
+        this.service.addApp(result).subscribe(
+          (res: App) => {
+            this.snackBar.open('App created', 'Close', { duration: 3000 })
+            this.apps.push(res)
+          },
+          err => this.snackBar.open('App creation failed', 'Close', { duration: 3000 }))
       }
     });
   }
