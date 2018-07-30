@@ -9,7 +9,7 @@ import { API_ENDPOINT } from "../../constants"
 export class AuthService {
 
     TOKEN_KEY = 'token';
-    USER_KEY = 'token';
+    USER_KEY = 'user';
 
     constructor(private http: HttpClient, private router: Router) { }
 
@@ -27,6 +27,7 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem(this.TOKEN_KEY);
+        localStorage.removeItem(this.USER_KEY)
         this.router.navigateByUrl('/login');
     }
 
