@@ -44,11 +44,11 @@ import {
   MatTreeModule,
 } from '@angular/material';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {FlexLayoutModule} from "@angular/flex-layout";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 
@@ -67,6 +67,7 @@ import { AppDetailsService } from './appdetails/appdetails.service';
 import { AppDetailsSettingsComponent } from './appdetails/settings/settings.component';
 import { AppDetailsGeneralComponent } from './appdetails/general/general.component';
 import { DialogDeleteApp } from './appdetails/settings/dialog-delete.component';
+import { DialogScaleApp } from './appdetails/general/dialog-scale.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { DialogDeleteApp } from './appdetails/settings/dialog-delete.component';
     AppDetailsSettingsComponent,
     AppDetailsGeneralComponent,
     DialogDeleteApp,
+    DialogScaleApp,
   ],
   imports: [
     BrowserModule,
@@ -130,15 +132,15 @@ import { DialogDeleteApp } from './appdetails/settings/dialog-delete.component';
     AuthService,
     AppListService,
     {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptorService,
-        multi: true
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
     },
     CanActivateViaAuthGuard,
     CurrentAppService,
     AppDetailsService,
-],
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [NewAppDialog, DialogDeleteApp],
+  entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp],
 })
 export class AppModule { }

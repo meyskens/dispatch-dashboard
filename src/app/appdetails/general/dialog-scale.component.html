@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Scale</h1>
+<div mat-dialog-content>
+  <label for="replicas">Replicas</label>
+  <mat-slider max="5" min="1" step="1" [(ngModel)]="replicas" id="replicas" name="replicas" thumbLabel tickInterval="1"></mat-slider> {{ replicas }}
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-stroked-button color="primary" (click)="scale()">Scale</button>
+</div>
