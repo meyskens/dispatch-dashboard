@@ -8,11 +8,11 @@
         <span matPrefix>{{authService.user.repoUser}}/</span>
     </mat-form-field>
     <mat-form-field>
-        <input matInput [(ngModel)]="data.values.domain" placeholder="Domain">
+        <input matInput [(ngModel)]="data.domain" placeholder="Domain">
     </mat-form-field>
 
     <label for="replicas">Replicas</label>
-    <mat-slider max="5" min="1" step="1" [(ngModel)]="data.values.replicas" id="replicas" thumbLabel tickInterval="1"></mat-slider> {{ data.values.replicas }}
+    <mat-slider max="5" min="1" step="1" [(ngModel)]="data.replicas" id="replicas" thumbLabel tickInterval="1"></mat-slider> {{ data.replicas }}
 
 
 </div>
