@@ -23,6 +23,7 @@ export class App {
     name: string;
     internalName: string;
     repo: string;
-    values: object;
+    domain: string;
+    replicas: number;
     constructor() { }
 } 
