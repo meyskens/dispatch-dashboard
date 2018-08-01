@@ -13,3 +13,8 @@
 a {
     text-decoration: none;
 }
+
+mat-card {
+    max-width: 2048px;
+    margin: 20px auto !important;
+}
