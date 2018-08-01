@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import { CurrentAppService } from './navbar/currentapp.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private authService: AuthService) { }
+
+  currentApp = "";
+
+  constructor(private authService: AuthService, private currentAppService: CurrentAppService) {
+    currentAppService.currentApp$.subscribe(app => this.currentApp = app)
+  }
+
 }

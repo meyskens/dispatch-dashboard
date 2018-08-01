@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>General</h1>
+  </div>
+
+  <div class="col-xs-10">
+    <mat-card>
+      <mat-card-title>Info</mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <strong>Name:</strong>&nbsp;{{ _app.name }}</mat-list-item>
+          <mat-list-item>
+            <strong>Main domain:</strong>&nbsp;{{ _app.domain }}</mat-list-item>
+          <mat-list-item>
+            <strong>Repository:</strong>&nbsp;{{ _app.repo }}</mat-list-item>
+          <mat-list-item>
+            <strong>Current image:</strong>&nbsp;{{ _app.image || "Not yet pushed" }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-xs-2">
+    <mat-card>
+      <mat-card-title>Replicas</mat-card-title>
+      <mat-card-content>
+        <p class="replicas">
+          {{ _app.replicas }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-xs-10">
+    <mat-card>
+      <mat-card-title>Updates</mat-card-title>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let update of _updates">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ update.oldTag || "none" }}&nbsp;
+                <i class="fas fa-arrow-right"></i>&nbsp;{{ update.tag }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item>
+                <strong>Old tag:</strong>&nbsp;{{ update.oldTag || "none" }}</mat-list-item>
+              <mat-list-item>
+                <strong>New tag:</strong>&nbsp;{{ update.tag }}</mat-list-item>
+              <mat-list-item>
+                <strong>Time:</strong>&nbsp;{{ update.time | date:"long" }}</mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

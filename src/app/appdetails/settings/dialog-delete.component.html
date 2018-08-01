@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Are you sure? <i class="far fa-sad-cry"></i></h1>
+<div mat-dialog-content>
+  <p>Type the name of the app to delete it.</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="enteredName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()" cdkFocusInitial>Cancel</button>
+  <button mat-stroked-button color="warn" [disabled]="!canDelete()" (click)="delete()">DELETE!</button>
+</div>

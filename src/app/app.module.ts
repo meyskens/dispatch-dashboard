@@ -61,6 +61,12 @@ import { AppListComponent } from './applist/applist.component';
 import { LogsComponent } from './logs/logs.component';
 import { AppListService } from './applist/applist.service';
 import { NewAppDialog } from './applist/newapp.component';
+import { AppDetailsComponent } from './appdetails/appdetails.component';
+import { CurrentAppService } from './navbar/currentapp.service';
+import { AppDetailsService } from './appdetails/appdetails.service';
+import { AppDetailsSettingsComponent } from './appdetails/settings/settings.component';
+import { AppDetailsGeneralComponent } from './appdetails/general/general.component';
+import { DialogDeleteApp } from './appdetails/settings/dialog-delete.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +77,10 @@ import { NewAppDialog } from './applist/newapp.component';
     AppListComponent,
     LogsComponent,
     NewAppDialog,
+    AppDetailsComponent,
+    AppDetailsSettingsComponent,
+    AppDetailsGeneralComponent,
+    DialogDeleteApp,
   ],
   imports: [
     BrowserModule,
@@ -124,9 +134,11 @@ import { NewAppDialog } from './applist/newapp.component';
         useClass: AuthInterceptorService,
         multi: true
     },
-    CanActivateViaAuthGuard
+    CanActivateViaAuthGuard,
+    CurrentAppService,
+    AppDetailsService,
 ],
   bootstrap: [AppComponent],
-  entryComponents: [NewAppDialog],
+  entryComponents: [NewAppDialog, DialogDeleteApp],
 })
 export class AppModule { }

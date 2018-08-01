@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Settings</h1>
+  </div>
+
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-title>General</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="_app.name" [value]="_app.name" name="_app.name">
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+              <input matInput placeholder="Repo" [(ngModel)]="_app.repo" [value]="_app.repo" name="_app.repo">
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+              <input matInput placeholder="Main Domain" [(ngModel)]="_app.domain" [value]="_app.domain" name="_app.domain">
+          </mat-form-field>
+          <br/>
+          <button mat-raised-button color="primary" (click)="save()"><i class="far fa-save"></i> Save</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-xs-12">
+      <mat-card>
+        <mat-card-title>Danger zone</mat-card-title>
+        <mat-card-content>
+            <button mat-flat-button color="warn" (click)="delete()"><i class="far fa-skull"></i> Delete the app</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+</div>
