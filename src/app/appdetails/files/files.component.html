@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-title class="flex">
+        Files
+        <span class="fill-space"></span>
+        <button mat-raised-button color="accent" (click)="add()">
+          <i class="fas fa-plus-circle"></i> Add</button>
+      </mat-card-title>
+      <mat-card-content>
+        <span *ngIf="files.length === 0">No files found</span>
+        <mat-expansion-panel *ngFor="let file of files">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ file.name }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ file.path }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <form #f="ngForm" >
+            <mat-form-field>
+              <input matInput placeholder="Name" [(ngModel)]="file.name" [value]="file.name" name="file.name" [errorStateMatcher]="matcher" required>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+              <input matInput placeholder="Path" [(ngModel)]="file.path" [value]="file.path" name="file.path" [errorStateMatcher]="matcher" required validatePath>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+              <textarea matInput placeholder="Content" [(ngModel)]="file.content" [value]="file.content" name="file.content" [errorStateMatcher]="matcher" required></textarea>
+            </mat-form-field>
+            <br/>
+          <button mat-raised-button color="primary" (click)="save(file)" [disabled]="!f.valid"><i class="far fa-save"></i> Save</button> <button mat-raised-button color="warn" (click)="delete(file)"><i class="fas fa-trash"></i> Delete</button>
+          </form>
+        </mat-expansion-panel>
+      </mat-card-content>
+    </mat-card>
+  </div>

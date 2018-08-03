@@ -68,7 +68,9 @@ import { AppDetailsSettingsComponent } from './appdetails/settings/settings.comp
 import { AppDetailsGeneralComponent } from './appdetails/general/general.component';
 import { DialogDeleteApp } from './appdetails/settings/dialog-delete.component';
 import { DialogScaleApp } from './appdetails/general/dialog-scale.component';
-
+import { AppDetailsFilesComponent } from './appdetails/files/files.component';
+import { FilesService } from './appdetails/files/files.service';
+import { PathValidator } from './appdetails/files/path.validator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +85,8 @@ import { DialogScaleApp } from './appdetails/general/dialog-scale.component';
     AppDetailsGeneralComponent,
     DialogDeleteApp,
     DialogScaleApp,
+    AppDetailsFilesComponent,
+    PathValidator,
   ],
   imports: [
     BrowserModule,
@@ -139,6 +143,7 @@ import { DialogScaleApp } from './appdetails/general/dialog-scale.component';
     CanActivateViaAuthGuard,
     CurrentAppService,
     AppDetailsService,
+    FilesService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp],
