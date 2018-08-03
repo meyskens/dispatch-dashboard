@@ -73,7 +73,8 @@ import { FilesService } from './appdetails/files/files.service';
 import { PathValidator } from './appdetails/files/path.validator';
 import { EnvVarsService } from './appdetails/envvars/envvars.service';
 import { AppDetailsEnvVarsComponent } from './appdetails/envvars/envvars.component';
-import { DatabasesComponent } from './appdetails/databases/databases.component';
+import { AppDetailsDatabasesComponent } from './appdetails/databases/databases.component';
+import { DatabasesService } from './appdetails/databases/databases.service';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import { DatabasesComponent } from './appdetails/databases/databases.component';
     AppDetailsFilesComponent,
     PathValidator,
     AppDetailsEnvVarsComponent,
-    DatabasesComponent,
+    AppDetailsDatabasesComponent,
   ],
   imports: [
     BrowserModule,
@@ -151,6 +152,7 @@ import { DatabasesComponent } from './appdetails/databases/databases.component';
     AppDetailsService,
     FilesService,
     EnvVarsService,
+    DatabasesService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp],

@@ -12,9 +12,8 @@
   <mat-tab label="Environment">
       <app-appdetails-envvars [app]="app"></app-appdetails-envvars>
   </mat-tab>
-  <mat-tab label="Database">
-    <h1>Some more tab content</h1>
-    <p>...</p>
+  <mat-tab label="Databases">
+      <app-appdetails-databases [app]="app" (needsReload)="load()"></app-appdetails-databases>
   </mat-tab>
   <mat-tab label="Settings">
     <app-appdetails-settings [app]="app" (needsReload)="load()"></app-appdetails-settings>

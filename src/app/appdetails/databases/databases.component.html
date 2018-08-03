@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-title>
+        Databases
+      </mat-card-title>
+      <mat-card-content>
+          <mat-list>
+              <mat-list-item>
+                MongoDB
+                <span class="fill-space"></span>
+                <mat-slide-toggle color="primary" [checked]="mongodb" (change)="toggleMongoDB()"></mat-slide-toggle>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                PostgreSQL
+                <span class="fill-space"></span>
+                <mat-slide-toggle color="primary" [checked]="postgresql" (change)="togglePostgreSQL()"></mat-slide-toggle>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                MariaDB
+                <span class="fill-space"></span>
+                <mat-slide-toggle color="primary" [checked]="mariadb" (change)="toggleMariaDB()"></mat-slide-toggle>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                Redis
+                <span class="fill-space"></span>
+                <mat-slide-toggle color="primary" [checked]="redis" (change)="toggleRedis()"></mat-slide-toggle>
+              </mat-list-item>
+            </mat-list>
+            
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
