@@ -71,6 +71,10 @@ import { DialogScaleApp } from './appdetails/general/dialog-scale.component';
 import { AppDetailsFilesComponent } from './appdetails/files/files.component';
 import { FilesService } from './appdetails/files/files.service';
 import { PathValidator } from './appdetails/files/path.validator';
+import { EnvVarsService } from './appdetails/envvars/envvars.service';
+import { AppDetailsEnvVarsComponent } from './appdetails/envvars/envvars.component';
+import { DatabasesComponent } from './appdetails/databases/databases.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +91,8 @@ import { PathValidator } from './appdetails/files/path.validator';
     DialogScaleApp,
     AppDetailsFilesComponent,
     PathValidator,
+    AppDetailsEnvVarsComponent,
+    DatabasesComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,6 +150,7 @@ import { PathValidator } from './appdetails/files/path.validator';
     CurrentAppService,
     AppDetailsService,
     FilesService,
+    EnvVarsService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp],

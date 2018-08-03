@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-title class="flex">
+          Environment Variables
+        <span class="fill-space"></span>
+        <button mat-raised-button color="accent" (click)="add()">
+          <i class="fas fa-plus-circle"></i> Add</button>
+      </mat-card-title>
+      <mat-card-content>
+        <span *ngIf="envvars.length === 0">No environment variables found</span>
+        <mat-expansion-panel *ngFor="let envvar of envvars">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ envvar.name }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <form #f="ngForm" >
+            <mat-form-field>
+              <input matInput placeholder="Name" [(ngModel)]="envvar.name" [value]="envvar.name" name="envvar.name" [errorStateMatcher]="matcher" required>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+              <input matInput placeholder="Key" [(ngModel)]="envvar.key" [value]="envvar.key" name="envvar.key" [errorStateMatcher]="matcher" required>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <input matInput placeholder="Value" [(ngModel)]="envvar.value" [value]="envvar.value" name="envvar.value" [errorStateMatcher]="matcher" [type]="envvar.hide ? 'password' : 'text'" required>
+            </mat-form-field>
+            <br/>
+            <mat-checkbox [(ngModel)]="envvar.hide" checked="envvar.hide" name="envvar.hide" >Hide value</mat-checkbox>
+            <br/>
+            <button mat-raised-button color="primary" (click)="save(envvar)" [disabled]="!f.valid"><i class="far fa-save"></i> Save</button> <button mat-raised-button color="warn" (click)="delete(envvar)"><i class="fas fa-trash"></i> Delete</button>
+          </form>
+        </mat-expansion-panel>
+      </mat-card-content>
+    </mat-card>
+  </div>
