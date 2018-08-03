@@ -38,6 +38,7 @@
     <mat-card>
       <mat-card-title>Updates</mat-card-title>
       <mat-card-content>
+        <span *ngIf="_updates.length === 0">No image pushed yet</span>
         <mat-accordion>
           <mat-expansion-panel *ngFor="let update of _updates">
             <mat-expansion-panel-header>
