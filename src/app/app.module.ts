@@ -75,6 +75,8 @@ import { EnvVarsService } from './appdetails/envvars/envvars.service';
 import { AppDetailsEnvVarsComponent } from './appdetails/envvars/envvars.component';
 import { AppDetailsDatabasesComponent } from './appdetails/databases/databases.component';
 import { DatabasesService } from './appdetails/databases/databases.service';
+import { AppDetailsDomainsComponent } from './appdetails/domains/domains.component';
+import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,8 @@ import { DatabasesService } from './appdetails/databases/databases.service';
     PathValidator,
     AppDetailsEnvVarsComponent,
     AppDetailsDatabasesComponent,
+    AppDetailsDomainsComponent,
+    DialogAddDomain,
   ],
   imports: [
     BrowserModule,
@@ -155,6 +159,6 @@ import { DatabasesService } from './appdetails/databases/databases.service';
     DatabasesService,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp],
+  entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp, DialogAddDomain],
 })
 export class AppModule { }

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-title class="flex">
+        Domains
+        <span class="fill-space"></span>
+        <button mat-raised-button color="accent" (click)="add()">
+          <i class="fas fa-plus-circle"></i> Add</button>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            {{ _app.domain }}
+            <span class="fill-space"></span>
+            <span class="label">Primary</span>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <div *ngFor="let domain of _app.altDomains">
+            <mat-list-item>
+              {{ domain }}
+              <span class="fill-space"></span>
+              <button mat-mini-fab color="warn" (click)="delete(domain)">
+                <i class="far fa-trash"></i>
+              </button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>`

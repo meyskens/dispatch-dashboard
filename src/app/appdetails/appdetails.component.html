@@ -3,8 +3,7 @@
     <app-appdetails-general [app]="app" [updates]="updates" ></app-appdetails-general>
   </mat-tab>
   <mat-tab label="Domains">
-    <h1>Some more tab content</h1>
-    <p>...</p>
+    <app-appdetails-domains [app]="app" (needsReload)="load()"></app-appdetails-domains>
   </mat-tab>
   <mat-tab label="Files">
     <app-appdetails-files [app]="app"></app-appdetails-files>

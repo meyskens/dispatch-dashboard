@@ -33,6 +33,7 @@ export class AppDetails {
   repo: string;
   domain: string;
   image: string;
+  altDomains: string[];
 }
 
 export class Update {

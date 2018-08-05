@@ -1,0 +1,29 @@
+.row {
+    max-width: 2048px;
+    margin: 20px auto !important;
+}
+
+mat-card {
+    margin: 5px;
+}
+
+mat-panel-title {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.label {
+    background-color: #ffd740;
+    border-radius: 5px;
+    padding: 7px;
+    font-weight: 600;
+}

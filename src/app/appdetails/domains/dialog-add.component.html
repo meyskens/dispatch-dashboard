@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Add domain</h1>
+<div mat-dialog-content>
+  <form #f="ngForm">
+    <mat-form-field>
+      <input matInput [(ngModel)]="domain" name="domain" placeholder="Domain" required>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()" cdkFocusInitial>Cancel</button>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="domain" [disabled]="!f.valid">Add</button>
+</div>
