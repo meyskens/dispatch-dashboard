@@ -8,20 +8,27 @@
     <h1> {{ currentApp.name }}</h1>
     <mat-card>
       <div class="row">
-          <div class="col-xs-4">
-              From: <angular2-date-picker [(ngModel)]="startDate" [settings]="{ format: 'yyyy-MM-dd HH:mm', timePicker: true }"></angular2-date-picker>
-          </div>
-          <div class="col-xs-4">
-              To: <angular2-date-picker [(ngModel)]="endDate" [settings]="{ format: 'yyyy-MM-dd HH:mm', timePicker: true }"></angular2-date-picker>
-          </div>
-          <div class="col-xs-4">
-              <button mat-flat-button id="search" (click)="getLogs()"><i class="fas fa-search"></i>Search</button>
-          </div>
+        <div class="col-xs-4">
+          From:
+          <angular2-date-picker [(ngModel)]="startDate" [settings]="{ format: 'yyyy-MM-dd HH:mm', timePicker: true }"></angular2-date-picker>
+        </div>
+        <div class="col-xs-4">
+          To:
+          <angular2-date-picker [(ngModel)]="endDate" [settings]="{ format: 'yyyy-MM-dd HH:mm', timePicker: true }"></angular2-date-picker>
+        </div>
+        <div class="col-xs-4">
+          <button mat-flat-button id="search" (click)="getLogs()">
+            <i class="fas fa-search"></i>Search</button>
+        </div>
       </div>
     </mat-card>
     <mat-card>
+      <div *ngIf="!logs || logs.length <= 0">
+        <p>No logs found</p>
+      </div>
       <div *ngIf="logs && logs.length > 0">
-          <p *ngFor="let log of logs"><strong>{{ log.pod }}</strong> - {{ log.line }}</p>
+        <p *ngFor="let log of logs">
+          <strong>{{ log.pod }}</strong> - {{ log.line }}</p>
       </div>
     </mat-card>
   </mat-drawer-content>
