@@ -80,6 +80,7 @@ import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
 import { ApplogsComponent } from './applogs/applogs.component';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ApplogsService } from './applogs/applogs.service';
+import { StatsService } from './dash/stats.service';
 
 @NgModule({
   declarations: [
@@ -163,6 +164,7 @@ import { ApplogsService } from './applogs/applogs.service';
     EnvVarsService,
     DatabasesService,
     ApplogsService,
+    StatsService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp, DialogAddDomain],

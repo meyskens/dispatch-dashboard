@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatsService } from './stats.service';
 
 @Component({
   selector: 'app-dash',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashComponent implements OnInit {
 
-  constructor() { }
+  private apps = 0;
+  private requests = 0;
+  private request200s = 0;
 
-  ngOnInit() { }
+  constructor(private stats: StatsService) { }
+
+  ngOnInit() {
+    this.stats.getApps().subscribe((res: number) => this.apps = res)
+    this.stats.getRequets().subscribe((res: number) => this.requests = res)
+    this.stats.get200s().subscribe((res: number) => this.request200s = res)
+  }
 
 }

@@ -1,0 +1,29 @@
+mat-card {
+    margin: 100px;
+    padding: auto;
+    padding-top: 100px;
+    width: 20vw;
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+p {
+    text-align: center
+}
+
+.green {
+    color: green;
+}
+
+.number {
+    font-size: 400%;
+}
+
+.row {
+    max-width: 2048px;
+    margin: 20px auto !important;
+}
