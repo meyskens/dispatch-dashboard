@@ -1,0 +1,27 @@
+mat-card {
+    margin: 10px;
+}
+
+mat-drawer-container {
+    height: 100vh;
+}
+
+mat-drawer {
+    max-width: 200px;
+}
+
+mat-drawer-content {
+    margin-left: 200px;
+}
+
+h1 {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+angular2-date-picker {
+    width: 10%;
+}
+
+#search {
+    margin-top: 15px;
+}

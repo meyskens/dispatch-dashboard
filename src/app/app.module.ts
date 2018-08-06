@@ -77,6 +77,9 @@ import { AppDetailsDatabasesComponent } from './appdetails/databases/databases.c
 import { DatabasesService } from './appdetails/databases/databases.service';
 import { AppDetailsDomainsComponent } from './appdetails/domains/domains.component';
 import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
+import { ApplogsComponent } from './applogs/applogs.component';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { ApplogsService } from './applogs/applogs.service';
 
 @NgModule({
   declarations: [
@@ -98,6 +101,7 @@ import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
     AppDetailsDatabasesComponent,
     AppDetailsDomainsComponent,
     DialogAddDomain,
+    ApplogsComponent,
   ],
   imports: [
     BrowserModule,
@@ -142,6 +146,7 @@ import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    AngularDateTimePickerModule,
   ],
   providers: [
     AuthService,
@@ -157,6 +162,7 @@ import { DialogAddDomain } from './appdetails/domains/dialog-add.component';
     FilesService,
     EnvVarsService,
     DatabasesService,
+    ApplogsService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [NewAppDialog, DialogDeleteApp, DialogScaleApp, DialogAddDomain],

@@ -8,6 +8,7 @@
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
     <button mat-button routerLink="/Dashboard">Dashboard</button>
     <button mat-button routerLink="/apps">Apps</button>
+    <button mat-button routerLink="/applogs">Logs</button>
     <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-user"></i> {{ authService.user.name }} <i class="fas fa-caret-down"></i></button>
     <mat-menu #menu="matMenu">
       <button mat-button (click)="authService.logout()">Logout</button>
