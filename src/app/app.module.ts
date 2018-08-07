@@ -81,6 +81,9 @@ import { ApplogsComponent } from './applogs/applogs.component';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ApplogsService } from './applogs/applogs.service';
 import { StatsService } from './dash/stats.service';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
+
 
 @NgModule({
   declarations: [
@@ -148,6 +151,13 @@ import { StatsService } from './dash/stats.service';
     MatTooltipModule,
     MatTreeModule,
     AngularDateTimePickerModule,
+    NgProgressHttpModule,
+    NgProgressModule.forRoot({
+      min: 20,
+      meteor: true,
+      spinner: true,
+      spinnerPosition: "left",
+    }),
   ],
   providers: [
     AuthService,
