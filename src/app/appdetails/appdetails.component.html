@@ -1,20 +1,26 @@
 <mat-tab-group>
   <mat-tab label="General">
-    <app-appdetails-general [app]="app" [updates]="updates" ></app-appdetails-general>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-general [app]="app" [updates]="updates" *ngIf="app"></app-appdetails-general>
   </mat-tab>
   <mat-tab label="Domains">
-    <app-appdetails-domains [app]="app" (needsReload)="load()"></app-appdetails-domains>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-domains [app]="app" (needsReload)="load()" *ngIf="app"></app-appdetails-domains>
   </mat-tab>
   <mat-tab label="Files">
-    <app-appdetails-files [app]="app"></app-appdetails-files>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-files [app]="app" *ngIf="app"></app-appdetails-files>
   </mat-tab>
   <mat-tab label="Environment">
-      <app-appdetails-envvars [app]="app"></app-appdetails-envvars>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-envvars [app]="app" *ngIf="app"></app-appdetails-envvars>
   </mat-tab>
   <mat-tab label="Databases">
-      <app-appdetails-databases [app]="app" (needsReload)="load()"></app-appdetails-databases>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-databases [app]="app" (needsReload)="load()" *ngIf="app"></app-appdetails-databases>
   </mat-tab>
   <mat-tab label="Settings">
-    <app-appdetails-settings [app]="app" (needsReload)="load()"></app-appdetails-settings>
+    <mat-spinner *ngIf="!app"></mat-spinner>
+    <app-appdetails-settings [app]="app" (needsReload)="load()" *ngIf="app"></app-appdetails-settings>
   </mat-tab>
 </mat-tab-group>
