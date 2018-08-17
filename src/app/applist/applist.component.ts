@@ -11,11 +11,16 @@ import { NewAppDialog } from './newapp.component';
 export class AppListComponent implements OnInit {
 
   private apps: App[];
+  private appsLoading = false;
 
   constructor(private service: AppListService, public dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.service.getAllApps().subscribe((res: App[]) => this.apps = res)
+    this.appsLoading = true
+    this.service.getAllApps().subscribe((res: App[]) => {
+      this.apps = res
+      this.appsLoading = false
+    })
   }
 
   openDialog(): void {
