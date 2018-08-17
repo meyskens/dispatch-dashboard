@@ -21,7 +21,7 @@
     "@angular/http": "^6.1.2",
     "@angular/material": "^6.4.4",
     "@angular/platform-browser": "^6.1.1",
-    "@angular/platform-browser-dynamic": "^6.1.1",
+    "@angular/platform-browser-dynamic": "^6.1.2",
     "@angular/router": "^6.1.2",
     "@ngx-progressbar/core": "^5.0.1",
     "@ngx-progressbar/http": "^5.0.1",
