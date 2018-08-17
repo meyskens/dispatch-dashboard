@@ -25,3 +25,7 @@ angular2-date-picker {
 #search {
     margin-top: 15px;
 }
+
+mat-spinner {
+    margin: 0 auto;
+}

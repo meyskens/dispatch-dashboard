@@ -18,6 +18,7 @@ export class ApplogsComponent implements OnInit {
   private endDate: Date = new Date();
 
   private logs: Log[];
+  private logsLoading = false;
 
   constructor(private appListService: AppListService, private service: ApplogsService) { }
 
@@ -31,6 +32,7 @@ export class ApplogsComponent implements OnInit {
   }
 
   getLogs() {
+    this.logsLoading = true
 
     /*
       So you like typed languages but don't like TypeScript?
@@ -47,7 +49,10 @@ export class ApplogsComponent implements OnInit {
     this.endDate = new Date(this.endDate)
 
     this.service.getForAppBetween(this.currentApp._id, this.startDate, this.endDate)
-    .subscribe((res: Log[]) => this.logs = res)
+    .subscribe((res: Log[]) => {
+      this.logs = res
+      this.logsLoading = false
+    })
   }
 
 }

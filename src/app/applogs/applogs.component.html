@@ -23,10 +23,11 @@
       </div>
     </mat-card>
     <mat-card>
-      <div *ngIf="!logs || logs.length <= 0">
+      <mat-spinner *ngIf="logsLoading"></mat-spinner>
+      <div *ngIf="!logs || logs.length <= 0 && !logsLoading">
         <p>No logs found</p>
       </div>
-      <div *ngIf="logs && logs.length > 0">
+      <div *ngIf="logs && logs.length > 0 && !logsLoading">
         <p *ngFor="let log of logs">
           <strong>{{ log.pod }}</strong> - {{ log.line }}</p>
       </div>
