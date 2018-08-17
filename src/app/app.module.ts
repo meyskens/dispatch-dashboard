@@ -58,7 +58,6 @@ import { CanActivateViaAuthGuard } from './auth/can-activate-via-auth.guard';
 import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { AppListComponent } from './applist/applist.component';
-import { LogsComponent } from './logs/logs.component';
 import { AppListService } from './applist/applist.service';
 import { NewAppDialog } from './applist/newapp.component';
 import { AppDetailsComponent } from './appdetails/appdetails.component';
@@ -92,7 +91,6 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     DashComponent,
     HomeComponent,
     AppListComponent,
-    LogsComponent,
     NewAppDialog,
     AppDetailsComponent,
     AppDetailsSettingsComponent,
