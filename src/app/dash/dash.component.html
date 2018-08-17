@@ -1,20 +1,23 @@
 <div class="row">
   <div class="col-xs-4">
       <mat-card>
-        <h1 class="number">{{ apps }}</h1>
+        <h1 class="number" *ngIf="apps">{{ apps }}</h1>
+        <mat-spinner *ngIf="!apps"></mat-spinner>
         <h1><i class="far fa-rocket"></i> Apps</h1>
       </mat-card>
   </div>
   <div class="col-xs-4">
       <mat-card>
-          <h1 class="number">{{ requests }}</h1>
+          <h1 class="number" *ngIf="requests">{{ requests }}</h1>
+          <mat-spinner *ngIf="!requests"></mat-spinner>
           <h1><i class="far fa-concierge-bell"></i> Requests served</h1>
           <p>the past 24 hours</p>
       </mat-card>
   </div>
   <div class="col-xs-4">
       <mat-card>
-          <h1 class="number">{{ request200s }}</h1>
+          <h1 class="number" *ngIf="request200s">{{ request200s }}</h1>
+          <mat-spinner *ngIf="!request200s"></mat-spinner>
           <h1><span class="green"><i class="far fa-badge-check"></i> 200 OKs</span> served</h1>
           <p>the past 24 hours</p>
       </mat-card>

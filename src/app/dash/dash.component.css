@@ -27,3 +27,7 @@ p {
     max-width: 2048px;
     margin: 20px auto !important;
 }
+
+mat-spinner {
+    margin: 0 auto;
+}
