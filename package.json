@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^6.1.3",
     "@angular/platform-browser-dynamic": "^6.1.3",
     "@angular/router": "^6.1.9",
-    "@ngx-progressbar/core": "^5.0.1",
+    "@ngx-progressbar/core": "^5.2.0",
     "@ngx-progressbar/http": "^5.2.0",
     "amazing-time-picker": "git+https://github.com/owsolutions/amazing-time-picker.git",
     "angular2-datetimepicker": "^1.1.1",
