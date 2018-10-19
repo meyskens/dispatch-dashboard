@@ -22,7 +22,7 @@
     "@angular/material": "^6.4.7",
     "@angular/platform-browser": "^6.1.10",
     "@angular/platform-browser-dynamic": "^6.1.10",
-    "@angular/router": "^6.1.10",
+    "@angular/router": "^7.0.0",
     "@ngx-progressbar/core": "^5.2.0",
     "@ngx-progressbar/http": "^5.2.0",
     "amazing-time-picker": "git+https://github.com/owsolutions/amazing-time-picker.git",
