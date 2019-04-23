@@ -29,7 +29,7 @@
     "angular2-datetimepicker": "^1.1.1",
     "core-js": "^2.6.5",
     "lodash.pull": "^4.1.0",
-    "rxjs": "^6.4.0",
+    "rxjs": "^6.5.1",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
