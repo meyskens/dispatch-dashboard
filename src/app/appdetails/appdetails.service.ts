@@ -33,6 +33,7 @@ export class AppDetails {
   repo: string;
   domain: string;
   image: string;
+  forceHTTPS: boolean;
   altDomains: string[];
 }
 
