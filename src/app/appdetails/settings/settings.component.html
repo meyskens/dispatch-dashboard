@@ -20,6 +20,8 @@
               <input matInput placeholder="Main Domain" [(ngModel)]="_app.domain" [value]="_app.domain" name="_app.domain">
           </mat-form-field>
           <br/>
+          <mat-checkbox [(ngModel)]="_app.forceHTTPS" checked="_app.forceHTTPS" name="_app.forceHTTPS" >Force HTTPS</mat-checkbox>
+          <br />
           <button mat-raised-button color="primary" (click)="save()"><i class="far fa-save"></i> Save</button>
         </form>
       </mat-card-content>

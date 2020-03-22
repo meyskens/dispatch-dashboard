@@ -30,6 +30,7 @@ export class AppDetailsSettingsComponent implements OnInit {
       name: this._app.name,
       repo: this._app.repo,
       domain: this._app.domain,
+      forceHTTPS: this._app.forceHTTPS,
     }).subscribe(res => {
       this.snackBar.open('Saved app', 'Close', { duration: 3000 })
       this.needsReload.emit(true)
