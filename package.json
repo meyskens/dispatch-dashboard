@@ -20,7 +20,7 @@
     "@angular/forms": "^7.0.2",
     "@angular/http": "^7.0.2",
     "@angular/material": "^7.0.2",
-    "@angular/platform-browser": "^7.2.16",
+    "@angular/platform-browser": "^10.0.3",
     "@angular/platform-browser-dynamic": "^7.0.2",
     "@angular/router": "^7.0.2",
     "@ngx-progressbar/core": "^5.2.1",
