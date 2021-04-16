@@ -1,5 +1,4 @@
-ARG ARCH
-FROM node:12 as build
+FROM amd64/node:14
 
 COPY ./ /opt/dash
 WORKDIR /opt/dash
@@ -10,8 +9,7 @@ RUN mv ./src/constants.ts.prod ./src/constants.ts
 RUN npm install
 RUN npm run build
 
-ARG ARCH
-FROM maartje/static-base:${ARCH}-latest
+FROM ghcr.io/meyskens/static-base:f43eda38b2756e94e3cfaea868d68cfe2b142f55
 
 RUN echo 'url.rewrite-if-not-file = ( "(?!\.\w+$)" => "/index.html" )' >> /etc/lighttpd/lighttpd.conf
 
