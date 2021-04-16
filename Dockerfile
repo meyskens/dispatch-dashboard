@@ -1,4 +1,4 @@
-FROM amd64/node:14
+FROM amd64/node:14 as build
 
 COPY ./ /opt/dash
 WORKDIR /opt/dash
