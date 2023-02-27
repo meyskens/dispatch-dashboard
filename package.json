@@ -27,7 +27,7 @@
     "@ngx-progressbar/http": "^5.2.1",
     "amazing-time-picker": "git+https://github.com/owsolutions/amazing-time-picker.git",
     "angular2-datetimepicker": "^1.1.1",
-    "core-js": "^2.6.11",
+    "core-js": "^3.29.0",
     "lodash.pull": "^4.1.0",
     "rxjs": "^6.5.4",
     "zone.js": "~0.8.29"
